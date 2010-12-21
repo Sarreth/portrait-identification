@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="es">
+	<head profile="http://gmpg.org/xfn/11">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8;charset=utf-8" />
+
+		<title>OpenCV 2.1 on NetBeans on Windows &laquo; Blog de Franco</title>
+
+		<link href="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/style000.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/print000.css" media="print" rel="stylesheet" type="text/css" />
+		<!--[if IE]>
+		<link href="http://s0.wp.com/wp-content/themes/pub/notepad/ie.css?m=1273001598g" media="screen" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<!--[if lte IE 6]>
+		<link href="http://s0.wp.com/wp-content/themes/pub/notepad/ie6.css?m=1273001598g" media="screen" rel="stylesheet" type="text/css" />
+		<![endif]-->
+
+		<link  rel="pingback" href="http://francocedillo.wordpress.com/xmlrpc.php" />
+
+		
+		<meta name="google-site-verification" content="wgmxHs6psVZNZ9sZI8FacxM61pA9zclmY0iw5e9u6Zg" />
+<link rel="alternate" type="application/rss+xml" title="Blog de Franco &raquo; Feed" href="http://francocedillo.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Blog de Franco &raquo; RSS de los comentarios" href="http://francocedillo.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Blog de Franco &raquo; OpenCV 2.1 on NetBeans on&nbsp;Windows RSS de los comentarios" href="http://francocedillo.wordpress.com/2010/05/27/opencv-2-1-on-netbeans-on-windows/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/global00.css" type="text/css" />
+<script type='text/javascript' src='http://s2.wp.com/wp-includes/js/l10n.js?m=1290133841g&amp;ver=20101110'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-includes/js/jquery/jquery.js?m=1290133841g&amp;ver=1.4.4'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-includes/js/comment-reply.js?m=1269039611g&amp;ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://francocedillo.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://francocedillo.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Blog de Franco' href='http://francocedillo.wordpress.com/' />
+<link rel='prev' title='Subir archivos a hoftile.com desde línea de comandos con&nbsp;cURL' href='http://francocedillo.wordpress.com/2010/05/25/subir-archivos-a-hotfile-desde-linea-de-comandos-con-curl/' />
+<link rel='next' title='Búscar cadena en archivos (recorrido recursivo de&nbsp;subdirectorios)' href='http://francocedillo.wordpress.com/2010/05/28/buscar-cadena-en-archivos-recorrido-recursivo-de-subdirectorios/' />
+<meta name="generator" content="WordPress.com" />
+<link rel='canonical' href='http://francocedillo.wordpress.com/2010/05/27/opencv-2-1-on-netbeans-on-windows/' />
+<link rel='shortlink' href='http://wp.me/pcX0B-8W' />
+<link rel="shortcut icon" type="image/x-icon" href="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/favicon-.txt" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/favicon-.txt" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon" href="http://s0.wp.com/wp-content/themes/h4/i/webclip.png?m=1269039639g" />
+	<style type="text/css">
+	/* <![CDATA[ */
+				div#likes { margin-top: 15px; }
+		.like-button { border: 1px solid #eee; padding: 2px 6px; font-size: 13px; font-family: arial, tahoma, sans-serif; }
+		#wpl-likebox { clear: left; font-size: 11px; font-family: arial, tahoma, verdana, sans-serif !important; min-height: 30px; margin: 10px 0 !important; padding: 5px 0 10px 0 !important; }
+		#wpl-button { float: left; background: url( OpenCV\ 2.1\ on\ NetBeans\ on\ Windows_files/buttonbg.png ) top left repeat-x; margin-right: 7px; border: 1px solid #d4d4d4; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-button a { color: #666 !important; line-height: 130% !important; text-decoration: none !important; outline: none; float: left; padding: 3px 6px 2px 24px !important; font-size: 11px !important; background: url( OpenCV\ 2.1\ on\ NetBeans\ on\ Windows_files/likestar.png ) 6px 49.8% no-repeat; }
+		#wpl-button.liked { background: #feffce; border: 1px solid #f3e389; }
+		#wpl-button.liked a { color: #ba871b !important; }
+		#wpl-likebox #wpl-count { min-height: 25px; line-height: 130% !important; float: left; padding-top: 4px; }
+		#wpl-likebox #wpl-avatars { clear: left; max-height: 98px; overflow: hidden; margin-top: 15px; line-height: 130% !important; }
+		#wpl-likebox #wpl-avatars img { border: none !important; }
+		#wpl-likebox #wpl-mustlogin { line-height: 14px !important; font-size: 11px; clear: left; margin-top: 5px; background: #f0f0f0; padding: 10px; width: 65%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-likebox #wpl-mustlogin a { color: #888; text-decoration: underline; }
+		#wpl-likebox #wpl-mustlogin p { margin: 5px 0; padding: 0 }
+		#wpl-likebox #wpl-mustlogin input.input { padding: 2px; background: #fff; font-size: 11px; font-family: inherit; border: 1px solid #ccc; -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin input#wp-submit { border: 1px solid #ccc; font-size: 11px; background: #fafafa; repeat-x; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 2px 4px !important; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin label { position: relative; cursor: text; }
+		#wpl-likebox #wpl-mustlogin label span { position: absolute; top: 0px; left: 5px; padding: 0 !important; }
+		#wpl-likebox #wpl-mustlogin label span { top /*\**/: -10px\9; }
+	/* ]]> */
+	</style>
+	<link rel='openid.server' href='http://francocedillo.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://francocedillo.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://francocedillo.wordpress.com/osd.xml" title="Blog de Franco" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+<style type="text/css">.recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}</style>
+<meta name="application-name" content="Blog de Franco" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Música, Reggae, Flamenco, Tecnologías Web, Desarrollo Web, Software Libre, Poesía" /><meta name="msapplication-task" content="name=Subscribir;action-uri=http://francocedillo.wordpress.com/feed/;icon-uri=http://s1.wp.com/i/favicon-stacked.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Soporte de WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Foros de WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" />
+<style type='text/css'>
+table.recentcommentsavatar img.avatar {border: 0px; margin:0;}
+table.recentcommentsavatar a {border: 0px !important;background-color: transparent !important}
+td.recentcommentsavatartop {padding:0px 0px 1px 0px;margin:0px; }
+td.recentcommentsavatarend {padding:0px 0px 1px 0px;margin:0px; }
+td.recentcommentstexttop { border: none !important;padding:0px 0px 0px 10px;}
+td.recentcommentstextend { border: none !important;padding:0px 0px 2px 10px;}
+</style>	</head>
+	<body class="single single-post postid-554 single-format-standard">
+		<div id="pagewrapper">
+		<div id="header">
+			<h1 id="logo">
+				<a href="http://francocedillo.wordpress.com/">Blog de Franco</a>
+			</h1>
+			<p class="description">Música, Reggae, Flamenco, Tecnologías Web, Desarrollo Web, Software Libre, Poesía</p>
+
+			<p class="socialmedia">
+										<a href="http://twitter.com/ParaCuerdas"><img alt="Twitter" src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/twitter0.png">Twitter</a>
+													<a href="http://www.facebook.com/franco.cedillo"><img alt="Facebook" src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/facebook.png">Facebook</a>
+													<a href="http://www.flickr.com/photos/francocedillo"><img alt="Flickr" src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/flickr00.png">Flickr</a>
+									</p>
+
+			<div class="menu"><ul class="menu"><li ><a href="http://francocedillo.wordpress.com/" title="Inicio">Inicio</a></li></ul></div>
+
+		</div>
+		<!--/header -->
+		<div id="wrapper">
+
+	<div id="content">
+
+		<p class="post-nav">
+			<span class="previous">
+				<a href="http://francocedillo.wordpress.com/2010/05/25/subir-archivos-a-hotfile-desde-linea-de-comandos-con-curl/" rel="prev">Subir archivos a hoftile.com desde línea de comandos con&nbsp;cURL</a>			</span>
+			<span class="next">
+				<a href="http://francocedillo.wordpress.com/2010/05/28/buscar-cadena-en-archivos-recorrido-recursivo-de-subdirectorios/" rel="next">Búscar cadena en archivos (recorrido recursivo de&nbsp;subdirectorios)</a>			</span>
+		</p>
+
+	
+		<div class="post-554 post type-post status-publish format-standard hentry category-computer-vision tag-opencv tag-netbeans tag-windows" id="post-554">
+			<h2 class="post-title">
+				<a href="" title="OpenCV 2.1 on NetBeans on&nbsp;Windows">OpenCV 2.1 on NetBeans on&nbsp;Windows</a>
+			</h2>
+			<p class="post-date">
+				mayo 27, 2010			</p>
+			<p class="post-data">
+				<span class="postauthor">
+					<a href="http://blog.pucp.edu.pe/franco" title="Visitar el sitio de adagioparacuerdas" rel="external">adagioparacuerdas</a>				</span>
+				<span class="postcategory">
+					<a href="http://es.wordpress.com/tag/computer-vision/" title="Ver todas las entradas en Computer Vision" rel="category tag">Computer Vision</a>				</span>
+				<span class="posttag"><a href="http://es.wordpress.com/tag/opencv/" rel="tag">opencv</a>, <a href="http://es.wordpress.com/tag/netbeans/" rel="tag">NetBeans</a>, <a href="http://es.wordpress.com/tag/windows/" rel="tag">Windows</a></span>				<span class="postcomment">
+					<a href="" title="Comentarios en OpenCV 2.1 on NetBeans on&nbsp;Windows">1 comentario</a>				</span>
+							</p>
+			<div class="post-content">
+				<p><img alt="OpenCV" src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/6tgxu900.png" title="OpenCV" width="320" height="297" /></p>
+<p><img alt="NetBeans" src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/2znsnl30.png" title="NetBeans" /></p>
+<p>First of all, try no to use Windows.</p>
+<p>1. Make sure you got the following installed</p>
+<ul>
+<li>C:\OpenCV2.1</li>
+<li>C:\MinGW</li>
+<li>C:\msys</li>
+</ul>
+<p>2. Right click on your project and click in <strong>Properties</strong> and complete the following:</p>
+<pre>
+Build » C++ Compiler
+   » Include Directories » C:/OpenCV2.1/include/opencv
+</pre>
+<p><img src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/dfhwf600.png" alt="Build » C++ Compiler » Include Directories » C:/OpenCV2.1/include/openc" title="Build » C++ Compiler » Include Directories » C:/OpenCV2.1/include/openc" width="400px" /></p>
+<pre>
+   » Linker
+      » Additional Library Directories » C:/OpenCV2.1/lib
+      » Libraries » cv210.dll, cvaux210.dll,
+                    cxcore210.dll, highgui210.dll
+</pre>
+<p><img src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/2ltlcg10.png" alt="Build » Linker" title="Build » Linker" width="400px" /></p>
+<p>3. Build your project.</p>
+<p>Executable (*.exe) file will be generated and located in your project directory on the following path: <strong>dist/Debug/MinGW-Windows/</strong></p>
+<p>Use this simple code to test your recently set environment:</p>
+<pre class="brush: cpp;">
+#include &quot;highgui.h&quot;
+
+int main(int argc, char** argv){
+   IplImage* img = cvLoadImage(argv[1]);
+   cvNamedWindow(&quot;ImgViewer&quot;, CV_WINDOW_AUTOSIZE);
+   cvShowImage(&quot;ImgViewer&quot;, img);
+   cvWaitKey(0);
+   cvReleaseImage(&amp;img);
+   cvDestroyWindow(&quot;ImgViewer&quot;);
+}
+</pre>
+<div class="pd-rating" id="pd_rating_holder_1058317_post_554"></div>
+<p><script type="text/javascript" charset="utf-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_1058317_post_554={"id":1058317,"unique_id":"wp-post-554","title":"OpenCV 2.1 on NetBeans on Windows","permalink":"http:\/\/francocedillo.wordpress.com\/2010\/05\/27\/opencv-2-1-on-netbeans-on-windows\/","item_id":"_post_554"}
+//--><!]]&gt;</script></p>
+			</div>
+					</div>
+		<!--/post -->
+
+		<div id="wpl-likebox"><div id="wpl-button"><a href='http://francocedillo.wordpress.com/2010/05/27/opencv-2-1-on-netbeans-on-windows/?like=1&amp;_wpnonce=d128751b9d' title='I like this post' class='like needs-login'><span>Like</span></a></div><div id="wpl-count">Be the first to like this post.</div></div>
+<!-- You can start editing here. -->
+
+	<h4 id="comments">
+		Un Comentario		<em>(<a href="">+add yours?</a>)</em>
+	</h4>
+
+	<div class="comment-nav">
+		<span class="previous"></span>
+		<span class="next"></span>
+	</div>
+
+	<ol class="commentlist snap_preview">
+		   <li class="comment even thread-even depth-1" id="comment-339">
+		<p class="comment-author">
+			<img alt='' src='http://1.gravatar.com/avatar/900599eb8b5e71d1a57fdbff2a7e439f?s=48&amp;d=' class='avatar avatar-48' height='48' width='48' />			<cite>Aggie85</cite><br />
+			<small>
+				<strong>dic 05, 2010</strong> @ 08:18:34							</small>
+		</p>
+
+		
+		<div class="commententry" id="comment-339">
+			
+			<p>THANK YOU SIR! very helpful.<br />
+clarification: </p>
+<p>» Libraries » cv210.dll, cvaux210.dll,<br />
+                    cxcore210.dll, highgui210.dll<br />
+select the &#8220;Add Library&#8221; option, and navigate to OpenCV2.1/bin folder they are in there <img src='OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/icon_smi.gif' alt=':)' class='wp-smiley' /> </p>
+		</div>
+
+
+		<p class="reply">
+			<a class='comment-reply-link' href='http://francocedillo.wordpress.com/2010/05/27/opencv-2-1-on-netbeans-on-windows/?replytocom=339#respond' onclick='return addComment.moveForm("commententry-339", "339", "respond", "554")'>Responder</a>		</p>
+
+		
+</li>
+	</ol>
+
+ 
+
+
+								<div id="respond">
+				<h3 id="reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="" style="display:none;">Cancelar respuesta</a></small></h3>
+									<form action="http://francocedillo.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Tu dirección de correo electrónico no será publicada. Los campos necesarios están marcados <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Nombre</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Correo electrónico</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Web</label><input id="url" name="url" type="text" value="" size="30" /></p>
+												<p class="comment-form-comment"><label for="comment">Comentario</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">Puedes usar las siguientes etiquetas y atributos <abbr title="HyperText Markup Language">HTML</abbr>:  <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;pre&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Publicar comentario" />
+							<input type='hidden' name='comment_post_ID' value='554' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						
+<input type="hidden" name="genseq" value="1292889034" />
+<p><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"/> <label class="subscribe-label" id="subscribe-label" for="subscribe">Recibir siguientes comentarios por correo.</label></p><p><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Recibir nuevas entradas por email.</label></p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="70c6e2d8f1" /></p>					</form>
+							</div><!-- #respond -->
+						
+
+		<p class="post-nav">
+			<span class="previous">
+				<a href="http://francocedillo.wordpress.com/2010/05/25/subir-archivos-a-hotfile-desde-linea-de-comandos-con-curl/" rel="prev">Subir archivos a hoftile.com desde línea de comandos con&nbsp;cURL</a>			</span>
+			<span class="next">
+				<a href="http://francocedillo.wordpress.com/2010/05/28/buscar-cadena-en-archivos-recorrido-recursivo-de-subdirectorios/" rel="next">Búscar cadena en archivos (recorrido recursivo de&nbsp;subdirectorios)</a>			</span>
+		</p>
+
+	
+
+	</div>
+	<!--/content -->
+
+	<div id="sidebar">
+
+		<div id="top-posts" class="widget widget_stats_topposts">			<h4 class="widgettitle">Posts Más Vistos</h4>			<ul><li><a href='http://francocedillo.wordpress.com/2009/02/10/guia-de-sex-shops-en-lima/'>Guía de Sex Shops en Lima</a></li><li><a href='http://francocedillo.wordpress.com/2008/07/06/dedicatoria-de-tesis/'>Dedicatoria y Agradecimientos de Tesis</a></li><li><a href='http://francocedillo.wordpress.com/2010/04/03/oficinas-del-bcp-con-horario-extendido-los-sabados/'>Oficinas del BCP con Horario Extendido los Sábados </a></li><li><a href='http://francocedillo.wordpress.com/2010/01/02/comentarios-anidados-en-wordpress/'>Comentarios Anidados en WordPress: Responder a Comentarios</a></li><li><a href='http://francocedillo.wordpress.com/2008/04/25/angie-jibaja-a-la-carcel-2-anos/'>Angie Jibaja a la cárcel 2 años</a></li><li><a href=''>OpenCV 2.1 on NetBeans on Windows</a></li><li><a href='http://francocedillo.wordpress.com/2009/01/12/pmbok-vs-scrum/'>PMBOK vs Scrum</a></li><li><a href='http://francocedillo.wordpress.com/2008/03/10/¿como-firmar-un-java-applet/'>¿Cómo firmar un Java Applet?</a></li><li><a href='http://francocedillo.wordpress.com/2008/07/30/trade-trata-y-trafico-de-personas/'>Trade - trata y tráfico de personas</a></li><li><a href='http://francocedillo.wordpress.com/2010/06/17/limpiar-el-cache-de-drupal-con-drush/'>Limpiar el caché de Drupal con drush</a></li></ul>		</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h4 class="widgettitle">Entradas recientes</h4>		<ul>
+				<li><a href="http://francocedillo.wordpress.com/2010/09/05/la-alternativa-del-e-marketing/" title="La alternativa del&nbsp;e-márketing">La alternativa del&nbsp;e-márketing</a></li>
+				<li><a href="http://francocedillo.wordpress.com/2010/09/05/los-sectores-populares-impulsan-ventas-on-line/" title="Los sectores populares impulsan ventas on&nbsp;line">Los sectores populares impulsan ventas on&nbsp;line</a></li>
+				<li><a href="http://francocedillo.wordpress.com/2010/09/05/learning-drupal-6-module-development-biblioteca-drupal-peru/" title="Learning Drupal 6 Module Development &#8211; Biblioteca Drupal&nbsp;Perú">Learning Drupal 6 Module Development &#8211; Biblioteca Drupal&nbsp;Perú</a></li>
+				<li><a href="http://francocedillo.wordpress.com/2010/09/05/el-presente-y-futuro-de-las-campanas-publicitarias/" title="El presente y futuro de las campañas&nbsp;publicitarias">El presente y futuro de las campañas&nbsp;publicitarias</a></li>
+				<li><a href="http://francocedillo.wordpress.com/2010/09/05/el-usuario-peruano-es-el-mas-sofisticado-de-la-region/" title="El usuario peruano es el más sofisticado de la&nbsp;región">El usuario peruano es el más sofisticado de la&nbsp;región</a></li>
+				</ul>
+		</div>	<div id="recent-comments" class="widget widget_recent_comments">		<h4 class="widgettitle">Comentarios recientes</h4>		<table class='recentcommentsavatar' cellspacing='0' cellpadding='0' border='0'><tr><td title="Aggie85" class="recentcommentsavatartop" style="height:48px; width:48px"><img alt='' src='http://1.gravatar.com/avatar/900599eb8b5e71d1a57fdbff2a7e439f?s=48&amp;d=' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstexttop">Aggie85 on <a href="">OpenCV 2.1 on NetBeans on&hellip;</a></td></tr><tr><td title="yoly" class="recentcommentsavatarend" style="height:48px; width:48px"><img alt='' src='http://0.gravatar.com/avatar/80bf6c859aa6ff4b0151b29158118a3b?s=48&amp;d=' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstextend">yoly on <a href="http://francocedillo.wordpress.com/2008/07/06/dedicatoria-de-tesis/#comment-327">Dedicatoria y Agradecimientos &hellip;</a></td></tr><tr><td title="allison" class="recentcommentsavatarend" style="height:48px; width:48px"><img alt='' src='http://1.gravatar.com/avatar/d34103208e9d3cc2ec24a6253420c338?s=48&amp;d=' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstextend">allison on <a href="http://francocedillo.wordpress.com/2008/07/06/dedicatoria-de-tesis/#comment-326">Dedicatoria y Agradecimientos &hellip;</a></td></tr><tr><td title="Duy" class="recentcommentsavatarend" style="height:48px; width:48px"><img alt='' src='http://1.gravatar.com/avatar/d6283e5a23e71dda791c5de25b5a3487?s=48&amp;d=' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstextend">Duy on <a href="http://francocedillo.wordpress.com/2010/05/21/opencv-update-the-slider-position/#comment-325">OpenCV » Update the Slider&hellip;</a></td></tr><tr><td title="Zorro" class="recentcommentsavatarend" style="height:48px; width:48px"><img alt='' src='http://1.gravatar.com/avatar/3ecde7952cb0aaab15b41ed7e8da9f0c?s=48&amp;d=' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstextend">Zorro on <a href="http://francocedillo.wordpress.com/2010/06/03/compiling-and-installing-handvu-on-linux/#comment-324">Compiling and Installing HandV&hellip;</a></td></tr></table>
+	</div><div id="wp_tag_cloud" class="widget wp_widget_tag_cloud"><h4 class="widgettitle">Etiquetas</h4><div style="overflow:hidden"><a href='http://francocedillo.wordpress.com/tag/2008/' class='tag-link-18856' title='2 temas' style='font-size: 8pt;'>2008</a>
+<a href='http://francocedillo.wordpress.com/tag/argentina/' class='tag-link-18939' title='2 temas' style='font-size: 8pt;'>argentina</a>
+<a href='http://francocedillo.wordpress.com/tag/aventura/' class='tag-link-16094' title='2 temas' style='font-size: 8pt;'>Aventura</a>
+<a href='http://francocedillo.wordpress.com/tag/bachata/' class='tag-link-220161' title='2 temas' style='font-size: 8pt;'>bachata</a>
+<a href='http://francocedillo.wordpress.com/tag/celular/' class='tag-link-14605' title='2 temas' style='font-size: 8pt;'>celular</a>
+<a href='http://francocedillo.wordpress.com/tag/cine/' class='tag-link-280' title='6 temas' style='font-size: 13.285714285714pt;'>Cine</a>
+<a href='http://francocedillo.wordpress.com/tag/comercio-electronico/' class='tag-link-40219' title='3 temas' style='font-size: 9.7142857142857pt;'>comercio electronico</a>
+<a href='http://francocedillo.wordpress.com/tag/concierto/' class='tag-link-150638' title='5 temas' style='font-size: 12.285714285714pt;'>Concierto</a>
+<a href='http://francocedillo.wordpress.com/tag/crimen/' class='tag-link-100218' title='2 temas' style='font-size: 8pt;'>crimen</a>
+<a href='http://francocedillo.wordpress.com/tag/daddy-yankee/' class='tag-link-38470' title='4 temas' style='font-size: 11.142857142857pt;'>Daddy Yankee</a>
+<a href='http://francocedillo.wordpress.com/tag/dancehall/' class='tag-link-127666' title='3 temas' style='font-size: 9.7142857142857pt;'>dancehall</a>
+<a href='http://francocedillo.wordpress.com/tag/don-carlos/' class='tag-link-947667' title='2 temas' style='font-size: 8pt;'>don carlos</a>
+<a href='http://francocedillo.wordpress.com/tag/drupal/' class='tag-link-1104' title='3 temas' style='font-size: 9.7142857142857pt;'>Drupal</a>
+<a href='http://francocedillo.wordpress.com/tag/espana/' class='tag-link-10991' title='4 temas' style='font-size: 11.142857142857pt;'>españa</a>
+<a href='http://francocedillo.wordpress.com/tag/feria-del-libro/' class='tag-link-665201' title='2 temas' style='font-size: 8pt;'>feria del libro</a>
+<a href='http://francocedillo.wordpress.com/tag/fiesta/' class='tag-link-33661' title='3 temas' style='font-size: 9.7142857142857pt;'>Fiesta</a>
+<a href='http://francocedillo.wordpress.com/tag/fil-lima-2008/' class='tag-link-9113737' title='2 temas' style='font-size: 8pt;'>fil-lima 2008</a>
+<a href='http://francocedillo.wordpress.com/tag/firefox/' class='tag-link-45' title='2 temas' style='font-size: 8pt;'>firefox</a>
+<a href='http://francocedillo.wordpress.com/tag/flamenco/' class='tag-link-165017' title='4 temas' style='font-size: 11.142857142857pt;'>Flamenco</a>
+<a href='http://francocedillo.wordpress.com/tag/google/' class='tag-link-81' title='4 temas' style='font-size: 11.142857142857pt;'>google</a>
+<a href='http://francocedillo.wordpress.com/tag/hip-hop/' class='tag-link-31276' title='2 temas' style='font-size: 8pt;'>hip hop</a>
+<a href='http://francocedillo.wordpress.com/tag/iphone/' class='tag-link-106595' title='2 temas' style='font-size: 8pt;'>iPhone</a>
+<a href='http://francocedillo.wordpress.com/tag/la-razon-de-los-amantes/' class='tag-link-9113740' title='2 temas' style='font-size: 8pt;'>la razón de los amantes</a>
+<a href='http://francocedillo.wordpress.com/tag/lima/' class='tag-link-31526' title='4 temas' style='font-size: 11.142857142857pt;'>Lima</a>
+<a href='http://francocedillo.wordpress.com/tag/linux/' class='tag-link-610' title='4 temas' style='font-size: 11.142857142857pt;'>linux</a>
+<a href='http://francocedillo.wordpress.com/tag/los-cafres/' class='tag-link-138969' title='2 temas' style='font-size: 8pt;'>Los Cafres</a>
+<a href='http://francocedillo.wordpress.com/tag/mysql/' class='tag-link-4419' title='5 temas' style='font-size: 12.285714285714pt;'>mysql</a>
+<a href='http://francocedillo.wordpress.com/tag/musica/' class='tag-link-774' title='7 temas' style='font-size: 14pt;'>Música</a>
+<a href='http://francocedillo.wordpress.com/tag/nou-vin-lakay/' class='tag-link-4050601' title='2 temas' style='font-size: 8pt;'>nou vin lakay</a>
+<a href='http://francocedillo.wordpress.com/tag/open-source/' class='tag-link-25' title='4 temas' style='font-size: 11.142857142857pt;'>Open Source</a>
+<a href='http://francocedillo.wordpress.com/tag/pablo-simonetti/' class='tag-link-4229784' title='2 temas' style='font-size: 8pt;'>Pablo Simonetti</a>
+<a href='http://francocedillo.wordpress.com/tag/pelicula/' class='tag-link-96760' title='2 temas' style='font-size: 8pt;'>película</a>
+<a href='http://francocedillo.wordpress.com/tag/peru/' class='tag-link-36547' title='9 temas' style='font-size: 15.428571428571pt;'>peru</a>
+<a href='http://francocedillo.wordpress.com/tag/pucp/' class='tag-link-918987' title='9 temas' style='font-size: 15.428571428571pt;'>PUCP</a>
+<a href='http://francocedillo.wordpress.com/tag/ras-boti/' class='tag-link-9156316' title='4 temas' style='font-size: 11.142857142857pt;'>ras boti</a>
+<a href='http://francocedillo.wordpress.com/tag/reggae/' class='tag-link-8220' title='28 temas' style='font-size: 22pt;'>Reggae</a>
+<a href='http://francocedillo.wordpress.com/tag/reggae-peru/' class='tag-link-8054097' title='3 temas' style='font-size: 9.7142857142857pt;'>reggae perú</a>
+<a href='http://francocedillo.wordpress.com/tag/reggaeton/' class='tag-link-32735' title='5 temas' style='font-size: 12.285714285714pt;'>Reggaeton</a>
+<a href='http://francocedillo.wordpress.com/tag/rusia/' class='tag-link-53378' title='2 temas' style='font-size: 8pt;'>Rusia</a>
+<a href='http://francocedillo.wordpress.com/tag/sexo/' class='tag-link-20513' title='2 temas' style='font-size: 8pt;'>sexo</a>
+<a href='http://francocedillo.wordpress.com/tag/ska/' class='tag-link-1436' title='2 temas' style='font-size: 8pt;'>ska</a>
+<a href='http://francocedillo.wordpress.com/tag/software-libre/' class='tag-link-3475' title='4 temas' style='font-size: 11.142857142857pt;'>software libre</a>
+<a href='http://francocedillo.wordpress.com/tag/tesis/' class='tag-link-12251' title='2 temas' style='font-size: 8pt;'>tesis</a>
+<a href='http://francocedillo.wordpress.com/tag/twitter/' class='tag-link-599182' title='4 temas' style='font-size: 11.142857142857pt;'>twitter</a>
+<a href='http://francocedillo.wordpress.com/tag/ubuntu/' class='tag-link-255' title='3 temas' style='font-size: 9.7142857142857pt;'>ubuntu</a></div></div><div id="twitter-3" class="widget widget_twitter"><h4 class="widgettitle"><a href='http://twitter.com/AdagioPaCuerdas'>Actualizaciones de Twitter</a></h4><p>Error: Twitter did not respond. Please wait a few minutes and refresh this page.</p></div><div id="linkcat-1356" class="widget widget_links"><h4 class="widgettitle">Blogroll</h4>
+	<ul class='xoxo blogroll'>
+<li><a href="http://francocedillo.wordpress.com/">Blog de Franco</a></li>
+<li><a href="http://blog.pucp.edu.pe/franco">Franco en BlogPUCP</a></li>
+<li><a href="http://francocedillo.blogspot.com/">Franco en BlogSpot</a></li>
+<li><a href="http://wordpress.com/">WordPress.com</a></li>
+<li><a href="http://wordpress.org/">WordPress.org</a></li>
+
+	</ul>
+</div>
+<div id="text-99948891" class="widget widget_text">			<div class="textwidget"><a href="http://www.blogsperu.com/">
+<img src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/boton_bl.gif" alt="BlogsPeru.com" border="0" /></a></div>
+		</div>
+	</div>
+	<!--/sidebar --></div>
+<!--/wrapper -->
+
+<div id="footer">
+	<p class="generator">
+		<a href="http://es.wordpress.com/?ref=footer" rel="generator">Blog de WordPress.com</a>.
+	</p>
+	<p class="credits">
+		Theme: Notepad by <a href="http://www.ndesign-studio.com/" rel="designer">N. Design</a>.	</p>
+</div>
+<!--/footer -->
+
+</div>
+<!--/pagewrapper -->
+
+<script type="text/javascript">
+/* <![CDATA[ */
+	document.getElementById("s").onfocus = function() {
+		if (this.value == "Search...")
+			this.value = "";
+	}
+	document.getElementById("s").onblur = function() {
+		if (this.value == '')
+			this.value = "Search...";
+	}
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery( function() {
+			
+			jQuery('#wpl-button > a.like').click( function(e) {
+				e.preventDefault();
+				
+				jQuery('#wpl-mustlogin').remove();
+
+				jQuery.post( 'http://francocedillo.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_like_click'
+				} );
+
+				var tenMins = new Date();
+				tenMins.setTime( tenMins.getTime() + 600000 );
+				document.cookie = 'wpl_rand=27098d7a98; expires=' + tenMins.toGMTString() + '; domain=wordpress.com; path=/;';
+				
+				jQuery('#wpl-count').after( '\
+					<div id="wpl-mustlogin"> \
+						<form action="http://francocedillo.wordpress.com/wp-login.php" method="post"> \
+							<p>Just one more step to like this post:</p> \
+							<label><span>Nombre de usuario</span> <input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="80" /></label> \
+							<label><span>Contraseña</span> <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="81" /></label> \
+							<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Acceder" tabindex="82" /> \
+							<input type="hidden" name="redirect_to" value="http://francocedillo.wordpress.com/2010/05/27/opencv-2-1-on-netbeans-on-windows/?like=1" /> \
+							<input type="hidden" name="wpl_rand" value="27098d7a98" /> \
+							<p>¿Aún no eres miembro? <a href="http://wordpress.com/signup/?ref=likebox" id="wpl-signup-link"> Regístrate en WordPress.com</a></p> \
+						</form> \
+					</div> \
+				');
+				
+				jQuery('#wpl-mustlogin').hide().slideDown('fast');
+			} );
+			
+			jQuery('#wpl-mustlogin input.input').live( 'focus', function() {
+				jQuery(this).prev().hide();
+			}).live( 'blur', function() {
+				if ( jQuery(this).val() == '' )
+					jQuery(this).prev().show();
+			});
+			
+			jQuery('#wpl-mustlogin input#wp-submit').live( 'click', function(e) {
+				e.preventDefault();
+				
+				jQuery.post( 'http://francocedillo.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_login_submit'
+				}, function() {
+					jQuery('#wpl-mustlogin form').submit();
+				} );
+			});			
+			
+			jQuery('#wpl-mustlogin a#wpl-signup-link').live( 'click', function(e) {
+				e.preventDefault();
+				
+				var link = jQuery(this).attr('href');
+				
+				jQuery.post( 'http://francocedillo.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_signup_click'
+				}, function() {
+					location.href = link;
+				} );
+			});					
+			
+		});
+	/* ]]> */
+	</script>
+<script type="text/javascript">_qoptions={qacct:'p-18-mFEk4J448M',labels:'language.es,type.wpcom,posttag.opencv,posttag.netbeans,posttag.windows'};</script>
+<script type="text/javascript" src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/quant000.js"></script>
+<noscript><p><img class="robots-nocontent" src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=language.es%2Ctype.wpcom%2Cposttag.opencv%2Cposttag.netbeans%2Cposttag.windows" style="display:none" height="1" width="1" alt="" /></p></noscript>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?n&#038;ver=MU'></script>
+	<script type="text/javascript">	
+	// <![CDATA[
+	WPGroHo = {
+		data: {},
+		renderers: {},
+		syncProfileData: function( hash, id ) {
+			if ( !WPGroHo.data[hash] ) {
+				WPGroHo.data[hash] = {};
+				a = jQuery( 'div.grofile-hash-map-' + hash + ' span' ).each( function() {
+					WPGroHo.data[hash][this.className] = jQuery( this ).text();
+				} );
+			}
+
+			WPGroHo.appendProfileData( WPGroHo.data[hash], hash, id );
+		},
+		appendProfileData: function( data, hash, id ) {
+			for ( var key in data ) {
+				if ( jQuery.isFunction( WPGroHo.renderers[key] ) ) {
+					return WPGroHo.renderers[key]( data[key], hash, id, key );
+				}
+
+				jQuery( '#' + id ).find( 'h4' ).after( jQuery( '<p class="grav-extra ' + key + '" />' ).html( data[key] ) );
+			}
+		}
+	};
+	jQuery(document).ready(function($){
+		Gravatar.profile_cb = function( h, d ) {
+			WPGroHo.syncProfileData( h, d );
+		};
+		Gravatar.attach_profiles();
+	});
+	// ]]>
+	</script>
+	<div style="display:none">
+	<div class="grofile-hash-map-900599eb8b5e71d1a57fdbff2a7e439f">
+	</div>
+	<div class="grofile-hash-map-80bf6c859aa6ff4b0151b29158118a3b">
+	</div>
+	<div class="grofile-hash-map-d34103208e9d3cc2ec24a6253420c338">
+	</div>
+	<div class="grofile-hash-map-d6283e5a23e71dda791c5de25b5a3487">
+	</div>
+	<div class="grofile-hash-map-3ecde7952cb0aaab15b41ed7e8da9f0c">
+	</div>
+	</div>
+<script type='text/javascript' src='OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/rating00.js'></script>
+<script type="text/javascript" src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/beacon00.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script type='text/javascript' src='http://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/shCore.js?m=1269039628g&#038;ver=2.1.364b'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/shBrushCpp.js?m=1269039628g&#038;ver=2.1.364b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var themecssurl = "http://s0.wp.com/wp-content/plugins/syntaxhighlighter-wpcom/shThemeDefault.css?m=1269039626g&amp;ver=2.1.364b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.getElementsByTagName("head")[0].appendChild(themecss);
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://s1.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf?m=1269039628g';
+	SyntaxHighlighter.config.strings.expandSource = 'Mostrar código.';
+	SyntaxHighlighter.config.strings.viewSource = 'ver fuente';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copiar al portapapeles';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'imprimir';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.all();
+</script>
+<script src="OpenCV%202.1%20on%20NetBeans%20on%20Windows_files/w0000000.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'3086769','v':'wpcom','user_id':'0','post':'554','subd':'francocedillo'});
+ex_go({'crypt':'RDZ8LFkxbXEtTW5OcnkvLHBULWwmZyZLcjFUQmNzPVVlS1I3WjdNdSx2YWFsaExHRz1TZEVVUHMrTzdLSFlGfjRMOFFOMGVYYWp5Tzg9aUxISS03UzlwR1R3akNUM0p6bV1QVkU5d3dFK3N4TEJ5L2V4R0VTP1NGY3YuR2FjRkFKaD9mcyV3SEE2bExSWE5tTUdpYT1XWkNGeUprR1BOJlNzK05OaGJ1L05uUV9SV3o2UE56UzNbTGhHbjUzYXg/U3J8K1lheVRqbzczdlFPc2ZpXWNJdE5zdGQ='});
+addLoadEvent(function(){linktracker_init('3086769',554);});
+	</script>
+</body>
+</html>
+<!-- This document saved from http://francocedillo.wordpress.com/2010/05/27/opencv-2-1-on-netbeans-on-windows/ -->
