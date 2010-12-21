@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>Несколько слов о NetBeans С/С++ Pack'е. Установка Cygwin'а и Netbeans C/C++ Pack'а.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251;charset=windows-1251">
+<link rel="icon" href="Установка%20Cygwin%20для%20Netbeans_files/favicon0.ico" type="image/x-icon">
+</head>
+
+<body background='Установка%20Cygwin%20для%20Netbeans_files/fon00000.jpg'>
+<a href="http://netbeans.mojgorod.ru/">Вернуться на главную страницу</a>
+<hr width="100%">
+<h1 align="center">Установка Cygwin'а и Netbeans C/C++ Pack'а.</h1>
+
+<ul>
+<li>
+Сначала нужно установить JDK 
+<a href="http://java.sun.com/j2se/1.5.0/download.html">1.5.0</a>
+или 
+<a href="http://java.sun.com/javase/downloads/index.jsp">1.6.0</a>.
+</li>
+<li>
+Затем поставить на свою машину <a href="http://dlc.sun.com.edgesuite.net/netbeans/6.0/final">Netbeans 6.0</a>.
+Причём у нас есть выбор. Мы можем скачать полную версию, включающую в себя множество модулей,
+ так и урезанную версию, содержащую только C/C++ Pack.
+</li>
+<li>
+Теперь нам нужно установить <a href="http://www.cygwin.com/setup.exe">Cygwin</a>
+ в C:\Cygwin папку.<br>
+Запускаем setup.exe файл. В появившемся окне нажимаем кнопку Next.
+ Выбираем "Install from Internet" и нажимаем кнопку Next 3 раза.
+ В появившемся окне установите Proxy, если это необходимо и опять
+ нажмите кнопку Next. Выберите любой адрес и нажмите кнопку Next. Появится такое
+ окно:<br>
+<img src="Установка%20Cygwin%20для%20Netbeans_files/cygwin00.jpg" width="504" height="394" border="0" alt="Устанавливаем Cygwin"><br>
+Нам обязательно нужно установить gcc-core, gcc-g++, gdb, make пакеты, которые расположены
+ в Devel категории. Для установки пакета нужно нажать на надпись "Skip" напротив имени пакета.
+ Нажмите кнопку Next опять. Когда все пакеты будут установлены,
+ нажмите кнопку Finish.
+</li>
+<li>
+И наконец нам нужно добавить путь к Cygwin в системную переменную Path.
+ Найдите иконку "My Computer" на рабочем столе или в меню, которое появляется
+ при нажатии кнопки "Start". Вызовите контекстное меню (нажмите правую кнопку мыши).
+ Выберите "Properties". Должно появится такое окно:<br>
+<img src="Установка%20Cygwin%20для%20Netbeans_files/mycomput.jpg" width="419" height="485" border="0" alt="окно System Properties">
+<br>
+Перейдите на вкладку "Advanced" и нажмите на кнопку "Environment Variables".
+Здесь нужно добавить "C:\Cygwin\bin;"<br>
+<img src="Установка%20Cygwin%20для%20Netbeans_files/path_to_.jpg" width="384" height="429" border="0" alt="Меняем переменную окружения Path">
+</li>
+<li>
+Теперь можно запустить Netbeans.
+</li>
+<li>
+Хочу только предупредить, что cygwin'овский компилятор создаёт программы
+ которые требуют для своего запуска сам cygwin (Т.е. если вы захотите запустить
+ программу на другом компьютере, то на нём вы должны установить cygwin).
+ Возможные действия:<br>
+- собирать программы с опцией Linker'a (линковщика) -mno-cygwin<br>
+- использовать MinGW
+</li>
+</ul>
+<p align=center>&copy; 2008 - 2010 Солдатов Валерий Фёдорович<br>
+<a href="http://drupal.mojgorod.ru/node/4">Ваши комментарии и замечания.</a></p>
+
+</body>
+</html>
+
+<!-- This document saved from http://netbeans.mojgorod.ru/cygwin.html -->
