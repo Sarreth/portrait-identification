@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>InstallGuide_Linux - OpenCV Wiki</title>
+<script type="text/javascript" src="InstallGuide_Linux%20-%20OpenCV%20Wiki_files/common00.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Искать";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="InstallGuide_Linux%20-%20OpenCV%20Wiki_files/common00.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="InstallGuide_Linux%20-%20OpenCV%20Wiki_files/screen00.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="InstallGuide_Linux%20-%20OpenCV%20Wiki_files/print000.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="InstallGuide_Linux%20-%20OpenCV%20Wiki_files/projecti.css">
+
+<!-- css only for MSIE browsers -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static172/rightsidebar/css/msie.css">
+<![endif]-->
+
+
+
+
+<link rel="Start" href="/wiki/Welcome">
+<link rel="Alternate" title="Вики-разметка" href="/wiki/InstallGuide_Linux?action=raw">
+<link rel="Alternate" media="print" title="Вид для печати" href="/wiki/InstallGuide_Linux?action=print">
+<link rel="Search" href="/wiki/FindPage">
+<link rel="Index" href="/wiki/TitleIndex">
+<link rel="Glossary" href="/wiki/WordIndex">
+<link rel="Help" href="/wiki/HelpOnFormatting">
+</head>
+
+<body  lang="ru" dir="ltr">
+
+<div id="header">
+
+<form id="searchform" method="get" action="">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput">Искать:</label>
+<input id="searchinput" type="text" name="value" value="" size="20"
+    onfocus="searchFocus(this)" onblur="searchBlur(this)"
+    onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search">
+<input id="titlesearch" name="titlesearch" type="submit"
+    value="По заголовкам" alt="Search Titles">
+<input id="fullsearch" name="fullsearch" type="submit"
+    value="По тексту" alt="Search Full Text">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<div id="logo"><a href="http://opencv.willowgarage.com/wiki/Welcome"><img src="InstallGuide_Linux%20-%20OpenCV%20Wiki_files/opencv-l.png" width=39 height=48 alt="OpenCV"></a></div>
+<div id="locationline">
+<div id="interwiki"><span><a href="http://opencv.willowgarage.com/wiki/Welcome" rel="nofollow">OpenCVWiki</a></span></div>
+
+<ul id="pagelocation">
+<li><a class="backlink" href="http://opencv.willowgarage.com/wiki/InstallGuide_Linux?action=fullsearch&amp;context=180&amp;value=linkto%3A%22InstallGuide_Linux%22" rel="nofollow" title="Нажмите сюда для полнотекстового поиска этого названия">InstallGuide_Linux</a></li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="sidebar">
+<div class="sidepanel">
+<h1>Вики</h1>
+
+<ul id="navibar">
+<li class="wikilink"><a href="http://opencv.willowgarage.com/wiki/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="http://opencv.willowgarage.com/wiki/FindPage">FindPage</a></li><li class="wikilink"><a href="http://opencv.willowgarage.com/wiki/HelpContents">HelpContents</a></li><li class="current"><a href="">InstallGuide_Linux</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Страница</h1>
+<ul class="editbar"><li><span class="disabled">Неизменяемая страница</span></li><li><a href="" class="toggleCommentsButton" style="display:none;" onClick="toggleComments();return false;">Комментарии</a></li><li><a class="nbinfo" href="http://opencv.willowgarage.com/wiki/InstallGuide_Linux?action=info" rel="nofollow">Информация</a></li><li><a class="nbattachments" href="http://opencv.willowgarage.com/wiki/InstallGuide_Linux?action=AttachFile" rel="nofollow">Вложения</a></li><li>
+<form class="actionsmenu" method="GET" action="">
+<div>
+    <label>Другие действия:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Показать разметку</option>
+<option value="print">Вид для печати</option>
+<option value="RenderAsDocbook">Сформатировать как Docbook</option>
+<option value="refresh">Удалить из кэша</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Проверить правописание</option>
+<option value="LikePages">Похожие страницы</option>
+<option value="LocalSiteMap">Карта окрестностей</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Переименовать страницу</option>
+<option value="DeletePage" disabled class="disabled">Удалить страницу</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Подписать пользователя</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Очистить от спама</option>
+<option value="show" disabled class="disabled">Вернуть эту версию</option>
+<option value="show" disabled class="disabled">Страницы пакета</option>
+<option value="SyncPages">Синхронизировать страницы</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="Load">Загрузить</option>
+<option value="Save">Записать</option>
+    </select>
+    <input type="submit" value="Выполнить">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('Другие действия:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>Пользователь</h1>
+<ul id="username"><li><a href="http://opencv.willowgarage.com/wiki/InstallGuide_Linux?action=login" id="login" rel="nofollow">Войти</a></li></ul>
+</div>
+</div>
+
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-8"></span><p class="line867">
+<h2 id="InstallingOpenCVonLinux">Installing OpenCV on Linux</h2>
+<span class="anchor" id="line-9"></span><p class="line874">Here is brief description on how to build the latest version of OpenCV. See INSTALL file shipped with OpenCV for more detail. The required packages are listed below: <span class="anchor" id="line-10"></span><ul><li>GCC 4.x or later. In Ubuntu/Debian it can be installed with <span class="anchor" id="line-11"></span></li></ul><p class="line867"><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><pre>sudo apt-get install build-essential</pre><span class="anchor" id="line-14"></span><ul><li>CMake 2.6 or higher <span class="anchor" id="line-15"></span></li><li>Subversion (SVN) client <span class="anchor" id="line-16"></span></li><li>GTK+ 2.x or higher, including headers (e.g. libgtk2.0-dev) <span class="anchor" id="line-17"></span></li><li>pkgconfig <span class="anchor" id="line-18"></span></li><li>libpng, zlib, libjpeg, libtiff, libjasper with development files (e.g. libjpeg-dev) <span class="anchor" id="line-19"></span></li><li>Python 2.3 or later with developer packages (e.g. python-dev) <span class="anchor" id="line-20"></span></li><li>SWIG 1.3.30 or later <span class="anchor" id="line-21"></span></li><li><p class="line862">libavcodec etc. from ffmpeg 0.4.9-pre1 or later + headers. (<a href="http://opencv.willowgarage.com/wiki/FFMPEG">Video support with FFMPEG</a>) <span class="anchor" id="line-22"></span></li><li>libdc1394 2.x + headers for video capturing from IEEE1394 cameras <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span></li></ul><p class="line867">
+<h3 id="GettingOpenCVsourcecodefromtherepository">Getting OpenCV source code from the repository</h3>
+<span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><p class="line862">Enter your working directory (denoted as ~/&lt;your_working_dir&gt; below) and type: <span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><pre>cd ~/&lt;your_working_dir&gt;
+svn co https://opencvlibrary.svn.sourceforge.net/svnroot/opencvlibrary/trunk</pre><span class="anchor" id="line-31"></span><p class="line874">to get the current OpenCV snapshot, or <span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><pre>cd ~/&lt;your_working_dir&gt;
+svn co https://opencvlibrary.svn.sourceforge.net/svnroot/opencvlibrary/tags/latest_tested_snapshot</pre><span class="anchor" id="line-36"></span><p class="line874">to get the latest tested OpenCV snapshot. <span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><p class="line867">
+<h3 id="Compilation">Compilation</h3>
+<span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><p class="line874">To build OpenCV using cmake, type the following: <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><p class="line867"><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><pre>cd ~/&lt;your_working_dir&gt;/opencv  # the directory should contain CMakeLists.txt, INSTALL etc.
+mkdir release # create the output directory
+cd release
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON ..</pre><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><p class="line874">You will see the configuration results. Various build options can be adjusted interactively using CMake GUI. <span class="anchor" id="line-50"></span>Then you build the library and install it to the target directory: <span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><p class="line867"><span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><pre>make
+sudo make install</pre><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><p class="line867">
+<h3 id="PathConfiguration">Path Configuration</h3>
+<span class="anchor" id="line-58"></span><p class="line874">In order to use the libraries in Linux, thier path should be specified. Library path can be specified in /etc/ld.so.conf.d/ by creating a file called 'opencv.conf' which contains the opencv library path (Default configuration is /usr/local/lib). Once the file is created, execute <span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><pre>sudo ldconfig -v</pre><span class="anchor" id="line-62"></span><p class="line874">to make new set library pathes effective. <span class="anchor" id="line-63"></span>Or you can also add the path to LD_LIBRARY_PATH: <span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><p class="line867"><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><pre>export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH</pre><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><p class="line867">
+<h3 id="TestOpenCV">Test OpenCV</h3>
+<span class="anchor" id="line-70"></span><p class="line874">You can run the correctness tests cxcoretest and cvtest for a quick sanity check: <span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><pre>cd ~/&lt;your_working_dir&gt;/opencv/release/bin
+./cxcoretest
+./cvtest -d ~/&lt;your_working_dir&gt;/opencv/tests/cv/testdata/cv</pre><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><p class="line874">You can also build and run OpenCV samples: <span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span><pre>cd ~/&lt;your_working_dir&gt;/opencv/samples/c
+. build_all.sh
+./delaunay
+# try other samples (some of them require a camera) ...</pre><span class="anchor" id="line-84"></span><span class="anchor" id="bottom"></span></div><p id="pageinfo" class="info" lang="ru" dir="ltr">OpenCVWiki: InstallGuide_Linux  (последним исправлял(а) <span title="DanFarmer @ 134.197.22.20[134.197.22.20]"><a class="nonexistent" href="http://opencv.willowgarage.com/wiki/DanFarmer" title="DanFarmer @ 134.197.22.20[134.197.22.20]">DanFarmer</a></span> 2010-03-04 19:52:54)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+</body>
+</html>
+
+
+<!-- This document saved from http://opencv.willowgarage.com/wiki/InstallGuide_Linux -->
