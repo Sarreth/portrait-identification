@@ -12,11 +12,11 @@ MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=gcc
-CCC=g++
-CXX=g++
+CC=gcc.exe
+CCC=g++.exe
+CXX=g++.exe
 FC=
-AS=as
+AS=as.exe
 
 # Macros
 CND_PLATFORM=Cygwin-Windows
@@ -31,7 +31,11 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/main.o
+	${OBJECTDIR}/src/capturer.o \
+	${OBJECTDIR}/src/sender.o \
+	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/detector.o \
+	${OBJECTDIR}/src/test.o
 
 # C Compiler Flags
 CFLAGS=
@@ -57,10 +61,30 @@ dist/Release/Cygwin-Windows/remote-client-webcam.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/Cygwin-Windows
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/remote-client-webcam ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/src/capturer.o: nbproject/Makefile-${CND_CONF}.mk src/capturer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/capturer.o src/capturer.cpp
+
+${OBJECTDIR}/src/sender.o: nbproject/Makefile-${CND_CONF}.mk src/sender.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/sender.o src/sender.cpp
+
 ${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
+
+${OBJECTDIR}/src/detector.o: nbproject/Makefile-${CND_CONF}.mk src/detector.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/detector.o src/detector.cpp
+
+${OBJECTDIR}/src/test.o: nbproject/Makefile-${CND_CONF}.mk src/test.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/test.o src/test.cpp
 
 # Subprojects
 .build-subprojects:

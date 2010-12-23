@@ -39,6 +39,7 @@
         <linkerTool>
           <linkerLibItems>
           </linkerLibItems>
+          <commandLine>-mno-cygwin</commandLine>
         </linkerTool>
       </compileType>
     </conf>
