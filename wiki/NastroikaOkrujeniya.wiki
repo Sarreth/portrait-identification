@@ -5,3 +5,5 @@
 [http://netbeans.mojgorod.ru/cygwin.html Установка Cygwin для NetBeans]
 
 [http://francocedillo.wordpress.com/2010/05/27/opencv-2-1-on-netbeans-on-windows/ Настройка NetBeans под OpenCV]
+
+[http://pocoproject.org/download/index.html Библиотека POCO] - для сетевого взаимодействия
