@@ -7,3 +7,7 @@
 [http://francocedillo.wordpress.com/2010/05/27/opencv-2-1-on-netbeans-on-windows/ Настройка NetBeans под OpenCV]
 
 [http://pocoproject.org/download/index.html Библиотека POCO] - для сетевого взаимодействия
+
+[http://www.boost.org/ Boost] - много чего, в частности работа с потоками
+
+[http://soci.sourceforge.net/ SOCI] - для работы с БД
