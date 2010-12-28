@@ -12,11 +12,11 @@ MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=gcc.exe
-CCC=g++.exe
-CXX=g++.exe
+CC=gcc
+CCC=g++
+CXX=g++
 FC=
-AS=as.exe
+AS=as
 
 # Macros
 CND_PLATFORM=Cygwin-Windows
@@ -31,7 +31,9 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/main.o
+	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/CImageController.o \
+	${OBJECTDIR}/src/CReciever.o
 
 # C Compiler Flags
 CFLAGS=
@@ -47,7 +49,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L../lib/opencv -lcv210 -lcxcore210
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -55,12 +57,22 @@ LDLIBSOPTIONS=
 
 dist/Debug/Cygwin-Windows/portrait-identification.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
-	${LINK.cc} -mno-cygwin -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/portrait-identification ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/portrait-identification ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -Iinclude -I../include/net -I../include/opencv -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
+
+${OBJECTDIR}/src/CImageController.o: nbproject/Makefile-${CND_CONF}.mk src/CImageController.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -I../include/net -I../include/opencv -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CImageController.o src/CImageController.cpp
+
+${OBJECTDIR}/src/CReciever.o: nbproject/Makefile-${CND_CONF}.mk src/CReciever.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -I../include/net -I../include/opencv -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CReciever.o src/CReciever.cpp
 
 # Subprojects
 .build-subprojects:
