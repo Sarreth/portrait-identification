@@ -6,9 +6,6 @@
  */
 
 #include <stdlib.h>
-#include "cv.h"
-#include "cxcore.h"
-#include "highgui.h"
 #include "sender.hpp"
 #include "capturer.hpp"
 #include "detector.hpp"
@@ -18,25 +15,20 @@
  * к основной системе идентификации и представляет собой
  * сервер получения изображений.
  */
-int main2(int argc, char** argv) {
+int main(void) {
     // Welcome message
     printf("Welcome! OpenCV version: %s (%d.%d.%d)\n", CV_VERSION,
             CV_MAJOR_VERSION, CV_MINOR_VERSION, CV_SUBMINOR_VERSION);
 
-    CSender *sender = new CSender();
-    CFacesDetector *detector = new CFacesDetector(
-            "D:\\Tools\\Img\\haarcascade_frontalface_alt2.xml", sender);
-    CCapturer *capturer = new CCapturer(detector);
+    CSender sender("127.0.0.1", 1212);
+    CFacesDetector detector(
+            "D:\\Tools\\Img\\haarcascade_frontalface_alt2.xml", &sender);
+    CCapturer capturer(&detector);
 
-    pthread_t tcapturer;
-    int id1 = 1;
-    result = pthread_create(&tcapturer, NULL, , &id1);
-
-    capturer->start();
-
-    delete sender;
-    delete detector;
-    delete capturer;
+    while (true) {
+        capturer.next();
+        usleep(33000);
+    }
 
     return (EXIT_SUCCESS);
 }

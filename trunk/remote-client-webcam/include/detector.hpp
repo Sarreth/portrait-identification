@@ -14,8 +14,9 @@ private:
     CvHaarClassifierCascade *cascade;
     CvMemStorage *storage;
     CSender *sender;
+    void log(const char *message);
 public:
-    void recognize(const IplImage* img);
-    CFacesDetector(const char* filename);
+    CFacesDetector(char* filename, CSender *sender);
     ~CFacesDetector();
+    void recognize(IplImage* img);
 };

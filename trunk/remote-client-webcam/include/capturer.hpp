@@ -13,11 +13,9 @@ class CCapturer {
 private:
     CvCapture *capture; // camera device
     CFacesDetector *detector;
-    bool stopped;
-    void *run();
+    void log(const char *message);
 public:
-    CCapturer();
+    CCapturer(CFacesDetector *detector);
     ~CCapturer();
-    CCapturer::start();
-    CCapturer::stop();
+    void next(void);
 };

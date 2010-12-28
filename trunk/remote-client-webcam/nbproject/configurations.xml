@@ -27,9 +27,6 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
-  <sourceRootList>
-    <Elem>src</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
@@ -43,6 +40,7 @@
           <incDir>
             <pElem>include</pElem>
             <pElem>../include/opencv</pElem>
+            <pElem>../include/net</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
@@ -51,11 +49,9 @@
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>cv210</linkerLibLibItem>
-            <linkerLibLibItem>cvaux210</linkerLibLibItem>
             <linkerLibLibItem>cxcore210</linkerLibLibItem>
             <linkerLibLibItem>highgui210</linkerLibLibItem>
           </linkerLibItems>
-          <commandLine>-mno-cygwin</commandLine>
         </linkerTool>
       </compileType>
     </conf>
