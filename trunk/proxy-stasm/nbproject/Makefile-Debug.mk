@@ -12,11 +12,11 @@ MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=gcc.exe
-CCC=g++.exe
-CXX=g++.exe
+CC=gcc
+CCC=g++
+CXX=g++
 FC=
-AS=as.exe
+AS=as
 
 # Macros
 CND_PLATFORM=Cygwin-Windows
@@ -54,7 +54,7 @@ LDLIBSOPTIONS=
 
 dist/Debug/Cygwin-Windows/libproxy-stasm.dll: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
-	${LINK.c} -mno-cygwin -mno-cygwin -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libproxy-stasm.dll ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.c} -mno-cygwin -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libproxy-stasm.dll ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 # Subprojects
 .build-subprojects:

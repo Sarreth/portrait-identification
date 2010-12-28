@@ -34,8 +34,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/capturer.o \
 	${OBJECTDIR}/src/sender.o \
 	${OBJECTDIR}/src/main.o \
-	${OBJECTDIR}/src/detector.o \
-	${OBJECTDIR}/src/test.o
+	${OBJECTDIR}/src/detector.o
 
 # C Compiler Flags
 CFLAGS=
@@ -80,11 +79,6 @@ ${OBJECTDIR}/src/detector.o: nbproject/Makefile-${CND_CONF}.mk src/detector.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -I../include/opencv -I../include/net -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/detector.o src/detector.cpp
-
-${OBJECTDIR}/src/test.o: nbproject/Makefile-${CND_CONF}.mk src/test.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -I../include/opencv -I../include/net -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/test.o src/test.cpp
 
 # Subprojects
 .build-subprojects:

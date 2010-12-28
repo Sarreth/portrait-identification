@@ -31,6 +31,7 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/domain/CEntity.o \
 	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/src/CImageController.o \
 	${OBJECTDIR}/src/CReciever.o
@@ -58,6 +59,11 @@ LDLIBSOPTIONS=-L../lib/opencv -lcv210 -lcxcore210
 dist/Debug/Cygwin-Windows/portrait-identification.exe: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/portrait-identification ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/domain/CEntity.o: nbproject/Makefile-${CND_CONF}.mk /cygdrive/D/Tools/Portrait_identification/portrait-identification/src/domain/CEntity.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/domain
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -I../include/net -I../include/opencv -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/domain/CEntity.o /cygdrive/D/Tools/Portrait_identification/portrait-identification/src/domain/CEntity.cpp
 
 ${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
