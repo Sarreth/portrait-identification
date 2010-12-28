@@ -19,9 +19,6 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
-  <sourceRootList>
-    <Elem>src</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="2">
@@ -39,7 +36,6 @@
         <linkerTool>
           <linkerLibItems>
           </linkerLibItems>
-          <commandLine>-mno-cygwin</commandLine>
         </linkerTool>
       </compileType>
     </conf>
