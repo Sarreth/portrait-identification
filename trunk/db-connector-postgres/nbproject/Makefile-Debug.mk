@@ -30,7 +30,9 @@ include Makefile
 OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES= \
+	${OBJECTDIR}/src/CEntityManager.o \
+	${OBJECTDIR}/src/main.o
 
 # C Compiler Flags
 CFLAGS=
@@ -46,7 +48,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L/cygdrive/C/Program\ Files/PostgreSQL/8.3/lib -L/cygdrive/C/Program\ Files/PostgreSQL/8.3/bin -lpq
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -54,7 +56,17 @@ LDLIBSOPTIONS=
 
 dist/Debug/Cygwin-Windows/libdb-connector-postgres.dll: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
-	${LINK.c} -mno-cygwin -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdb-connector-postgres.dll ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -mno-cygwin -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdb-connector-postgres.dll -s ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/src/CEntityManager.o: nbproject/Makefile-${CND_CONF}.mk src/CEntityManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -I../include/persistence -I/cygdrive/C/Program\ Files/PostgreSQL/8.3/include -I../portrait-identification/include/domain  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CEntityManager.o src/CEntityManager.cpp
+
+${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -I../include/persistence -I/cygdrive/C/Program\ Files/PostgreSQL/8.3/include -I../portrait-identification/include/domain  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:
