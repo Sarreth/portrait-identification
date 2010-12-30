@@ -30,7 +30,9 @@ include Makefile
 OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES= \
+	${OBJECTDIR}/src/CEntityManager.o \
+	${OBJECTDIR}/src/main.o
 
 # C Compiler Flags
 CFLAGS=
@@ -54,7 +56,17 @@ LDLIBSOPTIONS=
 
 dist/Release/Cygwin-Windows/libdb-connector-postgres.dll: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/Cygwin-Windows
-	${LINK.c} -mno-cygwin -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdb-connector-postgres.dll ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -mno-cygwin -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdb-connector-postgres.dll ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/src/CEntityManager.o: nbproject/Makefile-${CND_CONF}.mk src/CEntityManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CEntityManager.o src/CEntityManager.cpp
+
+${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:

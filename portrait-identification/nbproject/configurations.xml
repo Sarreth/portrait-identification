@@ -4,8 +4,21 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f2" displayName="dao" projectFiles="true">
+        <itemPath>D:/Tools/Portrait_identification/portrait-identification/include/dao/CGenericDAO.hpp</itemPath>
+        <itemPath>D:/Tools/Portrait_identification/portrait-identification/include/dao/CPersonDAO.hpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="domain" projectFiles="true">
+        <itemPath>../include/persistence/CEntity.hpp</itemPath>
+        <itemPath>include/domain/CPerson.hpp</itemPath>
+        <itemPath>include/domain/CPoint.hpp</itemPath>
+      </logicalFolder>
+      <itemPath>D:/Tools/Portrait_identification/portrait-identification/include/CEntityManager.hpp</itemPath>
+      <itemPath>include/CIdentifier.hpp</itemPath>
       <itemPath>include/CImageController.hpp</itemPath>
+      <itemPath>include/CNormalizer.hpp</itemPath>
       <itemPath>include/CReciever.hpp</itemPath>
+      <itemPath>../include/persistence/IEntityManager.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,7 +27,19 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f2" displayName="dao" projectFiles="true">
+        <itemPath>D:/Tools/Portrait_identification/portrait-identification/src/dao/CGenericDAO.cpp</itemPath>
+        <itemPath>D:/Tools/Portrait_identification/portrait-identification/src/dao/CPersonDAO.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="domain" projectFiles="true">
+        <itemPath>src/domain/CEntity.cpp</itemPath>
+        <itemPath>src/domain/CPerson.cpp</itemPath>
+        <itemPath>src/domain/CPoint.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>D:/Tools/Portrait_identification/portrait-identification/src/CEntityManager.cpp</itemPath>
+      <itemPath>src/CIdentifier.cpp</itemPath>
       <itemPath>src/CImageController.cpp</itemPath>
+      <itemPath>src/CNormalizer.cpp</itemPath>
       <itemPath>src/CReciever.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
@@ -38,6 +63,7 @@
             <pElem>include</pElem>
             <pElem>../include/net</pElem>
             <pElem>../include/opencv</pElem>
+            <pElem>../include/persistence</pElem>
           </incDir>
         </ccTool>
         <linkerTool>

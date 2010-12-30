@@ -1,6 +1,6 @@
 /* 
  * File:   CImageController.hpp
- * Author: Judge
+ * Author: Alex Judge
  *
  * Created on 27 Декабрь 2010 г., 0:49
  */

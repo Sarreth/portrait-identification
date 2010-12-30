@@ -1,6 +1,6 @@
 /* 
  * File:   CReciever.hpp
- * Author: Judge
+ * Author: Alex Judge
  *
  * Created on 26 Декабрь 2010 г., 19:43
  */
