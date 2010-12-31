@@ -2,7 +2,7 @@
 
 void CEntity::init(int id) {
     this->map = new m_values();
-    this->pk_name = "id";
+    this->id_name = "id";
     this->id = id;
 }
 
@@ -26,6 +26,6 @@ void CEntity::setId(int id) {
     this->id = id;
 }
 
-const std::string CEntity::getPkName() {
-    return this->pk_name;
+const std::string CEntity::getIdName() {
+    return this->id_name;
 }

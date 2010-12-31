@@ -6,26 +6,27 @@
  */
 
 #include <stdlib.h>
+#include <list>
 
 #include "IEntityManager.hpp"
 #include "CEntityManager.hpp"
 
 void persist_entity(CEntity *entity) {
-    CEntityManager *connector = CEntityManager::getInstance();
-    connector->persist(entity);
+    CEntityManager *em = CEntityManager::getInstance();
+    return em->persist(entity);
 }
 
-void merge_entity() {
-    CEntityManager *connector = CEntityManager::getInstance();
-    connector->merge();
+void merge_entity(CEntity *entity) {
+    CEntityManager *em = CEntityManager::getInstance();
+    em->merge(entity);
 }
 
-void remove_entity() {
-    CEntityManager *connector = CEntityManager::getInstance();
-    connector->remove();
+void remove_entity(CEntity *entity) {
+    CEntityManager *em = CEntityManager::getInstance();
+    em->remove(entity);
 }
 
-void find_entity() {
-    CEntityManager *connector = CEntityManager::getInstance();
-    connector->find();
+std::list<CEntity *> find_entity(CEntity *entity) {
+    CEntityManager *em = CEntityManager::getInstance();
+    return em->find(entity);
 }

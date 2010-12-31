@@ -7,9 +7,11 @@
 
 #pragma once
 
+#include <list>
+
 #include "CEntity.hpp"
 
 extern "C" void persist_entity(CEntity *entity);
-extern "C" void merge_entity();
-extern "C" void remove_entity();
-extern "C" void find_entity();
+extern "C" void merge_entity(CEntity *entity);
+extern "C" void remove_entity(CEntity *entity);
+extern "C" std::list<CEntity *> find_entity(CEntity *entity);

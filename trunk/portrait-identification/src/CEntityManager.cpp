@@ -2,17 +2,21 @@
 #include "CEntity.hpp"
 
 CEntityManager *CEntityManager::instance = NULL;
+char *CEntityManager::libname = NULL;
+
+void CEntityManager::setLibname(char *libname) {
+    CEntityManager::libname = libname;
+}
 
 CEntityManager *CEntityManager::getInstance() {
     if (CEntityManager::instance == NULL) {
-        std::string libname = "libdb-connector-postgres.dll";
-        CEntityManager::instance = new CEntityManager(libname);
+        CEntityManager::instance = new CEntityManager();
     }
     return CEntityManager::instance;
 }
 
-CEntityManager::CEntityManager(std::string libname) {
-    this->load(libname);
+CEntityManager::CEntityManager() {
+    this->load();
 }
 
 void CEntityManager::check() {
@@ -24,34 +28,34 @@ void CEntityManager::check() {
     }
 }
 
-void CEntityManager::load(std::string libname) {
-    this->handle = dlopen(libname.c_str(), RTLD_LAZY);
+void CEntityManager::load() {
+    this->handle = dlopen(CEntityManager::libname, RTLD_LAZY);
     if (!handle) {
         puts(dlerror());
         throw "Fail to load DBConnector plug-in";
     }
-    this->f_find = (FFind) dlsym(handle, "find_entity");
+    this->f_find = (FFind) dlsym(this->handle, "find_entity");
     this->check();
-    this->f_merge = (FMerge) dlsym(handle, "merge_entity");
+    this->f_merge = (FMerge) dlsym(this->handle, "merge_entity");
     this->check();
-    this->f_persist = (FPersist) dlsym(handle, "persist_entity");
+    this->f_persist = (FPersist) dlsym(this->handle, "persist_entity");
     this->check();
-    this->f_remove = (FRemove) dlsym(handle, "remove_entity");
+    this->f_remove = (FRemove) dlsym(this->handle, "remove_entity");
     this->check();
 }
 
-void CEntityManager::find() {
-    this->f_find();
+std::list<CEntity *> CEntityManager::find(CEntity *entity) {
+    return this->f_find(entity);
 }
 
-void CEntityManager::merge() {
-    this->f_merge();
+void CEntityManager::merge(CEntity *entity) {
+    this->f_merge(entity);
 }
 
 void CEntityManager::persist(CEntity *entity) {
     this->f_persist(entity);
 }
 
-void CEntityManager::remove() {
-    this->f_remove();
+void CEntityManager::remove(CEntity *entity) {
+    this->f_remove(entity);
 }

@@ -25,7 +25,7 @@ CREATE TABLE points
   CONSTRAINT points_pkey PRIMARY KEY (id),
   CONSTRAINT points_person_id_fkey FOREIGN KEY (person_id)
       REFERENCES persons (id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION,
+      ON UPDATE CASCADE ON DELETE CASCADE,
   CONSTRAINT points_person_id_key UNIQUE (person_id, point_number)
 )
 ALTER TABLE points OWNER TO "user";

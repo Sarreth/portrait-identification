@@ -8,6 +8,7 @@
 #pragma once
 
 #include <string>
+#include <sstream>
 #include <list>
 #include <libpq-fe.h>
 #include "CEntity.hpp"
@@ -21,7 +22,7 @@ private:
 public:
     static CEntityManager *getInstance();
     void persist(CEntity *emtity);
-    void merge();
-    void remove();
-    void find();
+    void merge(CEntity *emtity);
+    void remove(CEntity *emtity);
+    std::list<CEntity *> find(CEntity *emtity);
 };

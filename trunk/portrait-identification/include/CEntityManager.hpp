@@ -9,30 +9,33 @@
 
 #include <stdio.h>
 #include <string>
+#include <list>
 #include <dlfcn.h>
 
 #include "CEntity.hpp"
 
-typedef void(*FFind)(void);
-typedef void(*FMerge)(void);
-typedef void(*FPersist)(CEntity *entity);
-typedef void(*FRemove)(void);
+typedef std::list<CEntity *>(*FFind)(CEntity *);
+typedef void(*FMerge)(CEntity *);
+typedef void(*FPersist)(CEntity *);
+typedef void(*FRemove)(CEntity *);
 
 class CEntityManager {
 private:
     static CEntityManager *instance;
+    static char *libname;
     void *handle;
     FFind f_find;
     FMerge f_merge;
     FPersist f_persist;
     FRemove f_remove;
-    void load(std::string libname);
-    CEntityManager(std::string libname);
+    void load();
+    CEntityManager();
     void check();
 public:
+    static void setLibname(char *libname);
     static CEntityManager *getInstance();
     void persist(CEntity *entity);
-    void merge();
-    void remove();
-    void find();
+    void merge(CEntity *entity);
+    void remove(CEntity *entity);
+    std::list<CEntity *> find(CEntity *entity);
 };

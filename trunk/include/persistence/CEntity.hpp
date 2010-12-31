@@ -19,14 +19,14 @@ private:
 protected:
     int id;
     m_values *map;
-    std::string pk_name;
+    std::string id_name;
 public:
     CEntity();
     CEntity(int id);
     virtual ~CEntity();
     virtual const m_values *getRow() = 0;
     virtual const std::string getTableName() = 0;
-    virtual const std::string getPkName();
+    virtual const std::string getIdName();
     virtual int getId();
-    void setId(int id);
+    virtual void setId(int id);
 };

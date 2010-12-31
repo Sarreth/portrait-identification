@@ -37,6 +37,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/dao/CGenericDAO.o \
 	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/dao/CPersonDAO.o \
+	${OBJECTDIR}/src/dao/CPointDAO.o \
 	${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/CEntityManager.o \
 	${OBJECTDIR}/src/domain/CEntity.o \
 	${OBJECTDIR}/src/CImageController.o \
@@ -96,6 +97,11 @@ ${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/d
 	${MKDIR} -p ${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/dao
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/dao/CPersonDAO.o /cygdrive/D/Tools/Portrait_identification/portrait-identification/src/dao/CPersonDAO.cpp
+
+${OBJECTDIR}/src/dao/CPointDAO.o: nbproject/Makefile-${CND_CONF}.mk src/dao/CPointDAO.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/dao
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/dao/CPointDAO.o src/dao/CPointDAO.cpp
 
 ${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src/CEntityManager.o: nbproject/Makefile-${CND_CONF}.mk /cygdrive/D/Tools/Portrait_identification/portrait-identification/src/CEntityManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/D_/Tools/Portrait_identification/portrait-identification/src
