@@ -8,8 +8,9 @@
 #pragma once
 
 #include "CGenericDAO.hpp"
+#include "../domain/CPerson.hpp"
 
-class CPersonDAO {//: public CGenericDAO {
+class CPersonDAO : public CGenericDAO {
 private:
 
 public:

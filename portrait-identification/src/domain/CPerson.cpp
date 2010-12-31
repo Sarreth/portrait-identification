@@ -1,6 +1,6 @@
 #include "domain/CPerson.hpp"
 
-CPerson::CPerson(std::string person_firstname, std::string person_lastname,
+CPerson::CPerson(std::string person_lastname, std::string person_firstname,
         std::string person_patronymic) {
     this->person_firstname = person_firstname;
     this->person_lastname = person_lastname;

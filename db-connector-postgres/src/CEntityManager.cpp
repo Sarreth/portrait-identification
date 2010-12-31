@@ -36,38 +36,108 @@ void CEntityManager::connect(std::string host, std::string database,
 }
 
 void CEntityManager::persist(CEntity *entity) {
-    std::string table_name = entity->getTableName();
+    puts("start insert");
     std::string query = "insert into ";
-    query.append(table_name);
-
-    const m_values *map = entity->getRow();
+    query.append(entity->getTableName());
 
     std::string names = "(";
     std::string values = ")values(";
 
     if (entity->getId() != 0) {
-        names.append("\"").append(entity->getPkName()).append("\"");
-        values.append("\'").append(entity->getPkName()).append("\'");
+        names.append("\"").append(entity->getIdName()).append("\"");
+        values.append("\'").append(entity->getIdName()).append("\'");
     }
 
+    const m_values *map = entity->getRow();
     for (m_values::const_iterator i = map->begin(); i != map->end(); i++) {
         names.append("\"").append(i->first).append("\",");
         values.append("\'").append(i->second).append("\',");
     }
     query.append(names.replace(names.end() - 1, names.end(),
-            values.replace(values.end() - 1, values.end(), ");")));
+            values.replace(values.end() - 1, values.end(), ") RETURNING \"")))
+            .append(entity->getIdName()).append("\";");
+
     PGresult *res = PQexec(conn, query.c_str());
-    puts(query.c_str());
+    puts("finish insert");
+    printf("result is: %d\n", PQresultStatus(res));
+    switch (PQresultStatus(res)) {
+        case PGRES_TUPLES_OK:
+            entity->setId(atoi(PQgetvalue(res, 0, 0)));
+            puts("ok insert");
+            break;
+        default:
+            std::string message = "Error when inserting";
+            puts(message.append(PQresultErrorMessage(res)).c_str());
+            break;
+    }
+    PQclear(res);
+    puts("exit insert");
 }
 
-void CEntityManager::merge() {
+void CEntityManager::merge(CEntity *entity) {
+    if (entity->getId() == 0) {
+        this->persist(entity);
+        return;
+    }
 
+    std::string query = "update ";
+    query.append(entity->getTableName()).append(" set ");
+
+    const m_values *map = entity->getRow();
+    for (m_values::const_iterator i = map->begin(); i != map->end(); i++) {
+        query.append("\"").append(i->first).append("\"=\'")
+                .append(i->second).append("\',");
+    }
+
+    std::stringstream ss;
+    ss << entity->getId();
+    query.replace(query.end() - 1, query.end(), " where \"")
+            .append(entity->getIdName()).append("\"=\'")
+            .append(ss.str()).append("\';");
+
+    PGresult *res = PQexec(conn, query.c_str());
+    switch (PQresultStatus(res)) {
+        case PGRES_COMMAND_OK:
+            break;
+        default:
+            std::string message = "Error when inserting";
+            puts(message.append(PQresultErrorMessage(res)).c_str());
+            break;
+    }
+    PQclear(res);
 }
 
-void CEntityManager::remove() {
+void CEntityManager::remove(CEntity *entity) {
+    if (entity->getId() == 0) {
+        throw "ID could not be empty";
+    }
 
+    std::stringstream ss;
+    ss << entity->getId();
+    std::string query = "delete from ";
+    query.append(entity->getTableName()).append(" where \"")
+            .append(entity->getIdName()).append("\"=\'")
+            .append(ss.str()).append("\';");
+
+    PGresult *res = PQexec(conn, query.c_str());
+    std::string message = "";
+    switch (PQresultStatus(res)) {
+        case PGRES_COMMAND_OK:
+            ss.str("");
+            ss << entity->getId();
+            puts(message.append("Deleting ok, id = ").append(ss.str()).c_str());
+            break;
+        default:
+            ss.str("");
+            ss << entity->getId();
+            puts(message.append("Error when removing, id = ")
+                    .append(ss.str()).append(" Cause: ")
+                    .append(PQresultErrorMessage(res)).c_str());
+            break;
+    }
+    PQclear(res);
 }
 
-void CEntityManager::find() {
+std::list<CEntity *> CEntityManager::find(CEntity *entity) {
 
 }
