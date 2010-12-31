@@ -12,6 +12,9 @@
 
 [http://pocoproject.org/download/index.html Библиотека POCO]:  сетевое взаимодействие, журналирование
 
-[http://www.boost.org/ Boost] - много чего, в частности работа с потоками
+[http://www.boost.org/ Boost]:
+ * [http://www.boost.org/doc/libs/1_45_0/doc/html/program_options.html Boost.Program_options] - файлы свойств (настроек) системы
+ * [http://www.boost.org/doc/libs/1_45_0/libs/exception/doc/boost-exception.html Boost Exception] - работа с исключениями
+ * [http://www.boost.org/doc/libs/1_45_0/doc/html/thread.html Thread] - многопоточность
 
 [http://soci.sourceforge.net/ SOCI] - для работы с БД
