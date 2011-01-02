@@ -30,7 +30,9 @@ include Makefile
 OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES= \
+	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/CWrapper.o
 
 # C Compiler Flags
 CFLAGS=
@@ -46,7 +48,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L../lib/opencv -L../lib/asmlib -lcv -lcxcore -lhighgui -lcygasmlibrary.dll
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -54,7 +56,17 @@ LDLIBSOPTIONS=
 
 dist/Debug/Cygwin-Windows/libproxy-asmlib.dll: ${OBJECTFILES}
 	${MKDIR} -p dist/Debug/Cygwin-Windows
-	${LINK.c} -mno-cygwin -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libproxy-asmlib.dll ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -mno-cygwin -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libproxy-asmlib.dll -s ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -s -Iinclude -I../include/proxy -I../include/opencv  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.cpp
+
+${OBJECTDIR}/src/CWrapper.o: nbproject/Makefile-${CND_CONF}.mk src/CWrapper.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -s -Iinclude -I../include/proxy -I../include/opencv  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CWrapper.o src/CWrapper.cpp
 
 # Subprojects
 .build-subprojects:

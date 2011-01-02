@@ -14,12 +14,15 @@
         <itemPath>include/domain/CPerson.hpp</itemPath>
         <itemPath>include/domain/CPoint.hpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f3" displayName="New Folder 3" projectFiles="true">
+      </logicalFolder>
       <itemPath>D:/Tools/Portrait_identification/portrait-identification/include/CEntityManager.hpp</itemPath>
       <itemPath>include/CIdentifier.hpp</itemPath>
       <itemPath>include/CImageController.hpp</itemPath>
       <itemPath>include/CNormalizer.hpp</itemPath>
       <itemPath>include/CReciever.hpp</itemPath>
       <itemPath>../include/persistence/IEntityManager.hpp</itemPath>
+      <itemPath>../include/proxy/IProxy.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -61,6 +64,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <stripSymbols>true</stripSymbols>
           <incDir>
             <pElem>include</pElem>
             <pElem>../include/net</pElem>
@@ -72,6 +76,7 @@
           <linkerAddLib>
             <pElem>../lib/opencv</pElem>
           </linkerAddLib>
+          <stripSymbols>true</stripSymbols>
           <linkerLibItems>
             <linkerLibLibItem>cv210</linkerLibLibItem>
             <linkerLibLibItem>cxcore210</linkerLibLibItem>
