@@ -4,6 +4,13 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="asmlib" displayName="asmlib" projectFiles="true">
+        <itemPath>include/asmlib/asmbuilding.h</itemPath>
+        <itemPath>include/asmlib/asmfitting.h</itemPath>
+        <itemPath>include/asmlib/asmlibrary.h</itemPath>
+      </logicalFolder>
+      <itemPath>include/CWrapper.hpp</itemPath>
+      <itemPath>../include/proxy/IProxy.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +19,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/CWrapper.cpp</itemPath>
+      <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -19,9 +28,6 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
-  <sourceRootList>
-    <Elem>src</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="2">
@@ -32,12 +38,24 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <stripSymbols>true</stripSymbols>
           <incDir>
             <pElem>include</pElem>
+            <pElem>../include/proxy</pElem>
+            <pElem>../include/opencv</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
+          <linkerAddLib>
+            <pElem>../lib/opencv</pElem>
+            <pElem>../lib/asmlib</pElem>
+          </linkerAddLib>
+          <stripSymbols>true</stripSymbols>
           <linkerLibItems>
+            <linkerLibLibItem>cv</linkerLibLibItem>
+            <linkerLibLibItem>cxcore</linkerLibLibItem>
+            <linkerLibLibItem>highgui</linkerLibLibItem>
+            <linkerLibLibItem>cygasmlibrary.dll</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

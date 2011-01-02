@@ -22,7 +22,7 @@ int main(void) {
 
     CSender sender("127.0.0.1", 1212);
     CFacesDetector detector(
-            "D:\\Tools\\Img\\haarcascade_frontalface_alt2.xml", &sender);
+            "resources/haarcascade_frontalface_alt2.xml", &sender);
     CCapturer capturer(&detector);
 
     while (true) {
